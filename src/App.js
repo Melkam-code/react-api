@@ -11,14 +11,14 @@ class App extends Component {
      fetch('http://jsonplaceholder.typicode.com/users')
      .then(response => response.json())
      .then((data) => {
-       this.setState({ contact: data })
+       this.setState({ contacts: data })
      })
      .catch(console.log)
   }
 
   render() {
     return(
-      <Contacts contacts = {this.state.contact} />
+      <Contacts contacts = {this.state.contacts} />
     );
   }
 }
