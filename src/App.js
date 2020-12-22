@@ -5,6 +5,15 @@ class App extends Component {
   state = {
     contact: []
   }
+  
+  componentDidMount(){
+     fetch('http://jsonplaceholder.typicode.com/users')
+     .then(response => response.json())
+     .then((data) => {
+       this.setState({ contact: data })
+     })
+     .catch(console.log)
+  }
 
   render() {
     return(
